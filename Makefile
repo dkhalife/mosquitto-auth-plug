@@ -6,7 +6,16 @@ BE_CFLAGS =
 BE_LDFLAGS =
 BE_LDADD =
 BE_DEPS =
-OBJS = src/auth-plug.o src/base64.o src/pbkdf2-check.o src/log.o src/envs.o src/hash.o src/be-psk.o src/backends.o src/cache.o
+OBJS = \
+	src/auth-plug.o \
+	src/base64.o \
+	src/pbkdf2-check.o \
+	src/log.o \
+	src/envs.o \
+	src/hash.o \
+	src/be-psk.o \
+	src/backends.o \
+	src/cache.o \
 
 BACKENDS =
 BACKENDSTR =
@@ -189,6 +198,7 @@ $(CDBLIB):
 
 pwdb.cdb: pwdb.in
 	$(CDB) -c -m  pwdb.cdb pwdb.in
+
 clean :
 	rm -f *.o *.so np
 	(cd contrib/tinycdb-0.78; make realclean )
