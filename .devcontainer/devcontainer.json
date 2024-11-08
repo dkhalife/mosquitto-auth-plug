@@ -6,6 +6,7 @@
 		"vscode": {
 			"extensions": [
 				"mitaki28.vscode-clang",
+				"ms-vscode.cpptools",
 				"xaver.clang-format"
 			]
 		}
