@@ -168,30 +168,30 @@ printconfig:
 auth-plug.so : $(OBJS) $(BE_DEPS)
 	$(CC) $(CFLAGS) $(LDFLAGS) -fPIC -shared -o $@ $(OBJS) $(BE_DEPS) $(LDADD)
 
-be-redis.o: src/be-redis.c src/be-redis.h src/log.h src/hash.h src/envs.h Makefile
-be-memcached.o: src/be-memcached.c src/be-memcached.h src/log.h src/hash.h src/envs.h Makefile
-be-sqlite.o: src/be-sqlite.c src/be-sqlite.h Makefile
-auth-plug.o: src/auth-plug.c src/be-cdb.h src/be-mysql.h src/be-sqlite.h Makefile src/cache.h
-be-psk.o: src/be-psk.c src/be-psk.h Makefile
-be-cdb.o: src/be-cdb.c src/be-cdb.h Makefile
-be-mysql.o: src/be-mysql.c src/be-mysql.h Makefile
-be-ldap.o: src/be-ldap.c src/be-ldap.h Makefile
-be-sqlite.o: src/be-sqlite.c src/be-sqlite.h Makefile
-pbkdf2-check.o: src/pbkdf2-check.c src/base64.h Makefile
-base64.o: src/base64.c src/base64.h Makefile
-log.o: src/log.c src/log.h Makefile
-envs.o: src/envs.c src/envs.h Makefile
-hash.o: src/hash.c src/hash.h src/uthash.h Makefile
-be-postgres.o: src/be-postgres.c src/be-postgres.h Makefile
-cache.o: src/cache.c src/cache.h src/uthash.h Makefile
-be-http.o: src/be-http.c src/be-http.h Makefile src/backends.h
-be-jwt.o: src/be-jwt.c src/be-jwt.h Makefile src/backends.h
-be-mongo.o: src/be-mongo.c src/be-mongo.h Makefile
-be-files.o: src/be-files.c src/be-files.h Makefile
-backends.o: src/backends.c src/backends.h Makefile
+be-redis.o: src/be-redis.cpp src/be-redis.h src/log.h src/hash.h src/envs.h
+be-memcached.o: src/be-memcached.cpp src/be-memcached.h src/log.h src/hash.h src/envs.h
+be-sqlite.o: src/be-sqlite.cpp src/be-sqlite.h
+auth-plug.o: src/auth-plug.cpp src/be-cdb.h src/be-mysql.h src/be-sqlite.h src/cache.h
+be-psk.o: src/be-psk.cpp src/be-psk.h
+be-cdb.o: src/be-cdb.cpp src/be-cdb.h
+be-mysql.o: src/be-mysql.cpp src/be-mysql.h
+be-ldap.o: src/be-ldap.cpp src/be-ldap.h
+be-sqlite.o: src/be-sqlite.cpp src/be-sqlite.h
+pbkdf2-check.o: src/pbkdf2-check.cpp src/base64.h
+base64.o: src/base64.cpp src/base64.h
+log.o: src/log.cpp src/log.h
+envs.o: src/envs.cpp src/envs.h
+hash.o: src/hash.cpp src/hash.h src/uthash.h
+be-postgres.o: src/be-postgres.cpp src/be-postgres.h
+cache.o: src/cache.cpp src/cache.h src/uthash.h
+be-http.o: src/be-http.cpp src/be-http.h src/backends.h
+be-jwt.o: src/be-jwt.cpp src/be-jwt.h src/backends.h
+be-mongo.o: src/be-mongo.cpp src/be-mongo.h
+be-files.o: src/be-files.cpp src/be-files.h
+backends.o: src/backends.cpp src/backends.h
 
-np: src/np.c src/base64.o
-	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@ $(OSSLIBS)
+np: src/np.cpp src/base64.o
+	$(CXX) $(CFLAGS) $(LDFLAGS) $^ -o $@ $(OSSLIBS)
 
 $(CDBLIB):
 	(cd $(CDBDIR); make libcdb.a cdb )
