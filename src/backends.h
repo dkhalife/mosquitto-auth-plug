@@ -1,10 +1,10 @@
 /*
  * Copyright (c) 2013 Jan-Piet Mens <jp@mens.de>
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice,
  *    this list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright
@@ -13,7 +13,7 @@
  * 3. Neither the name of mosquitto nor the names of its
  *    contributors may be used to endorse or promote products derived from
  *    this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -28,32 +28,32 @@
  */
 
 #ifndef TRUE
-# define TRUE (1)
+#define TRUE (1)
 #endif
 #ifndef FALSE
-# define FALSE (0)
+#define FALSE (0)
 #endif
 #ifndef BACKEND_DEFER
-# define BACKEND_DEFER (0)
+#define BACKEND_DEFER (0)
 #endif
 #ifndef BACKEND_ALLOW
-# define BACKEND_ALLOW (1)
+#define BACKEND_ALLOW (1)
 #endif
 #ifndef BACKEND_ERROR
-# define BACKEND_ERROR (2)
+#define BACKEND_ERROR (2)
 #endif
 #ifndef BACKEND_DENY
-# define BACKEND_DENY (3)
+#define BACKEND_DENY (3)
 #endif
 
 #ifndef __BACKENDS_H
-# define __BACKENDS_H
+#define __BACKENDS_H
 
-typedef void (f_kill)(void *conf);
-typedef int (f_getuser)(void *conf, const char *username, const char *password, char **phash, const char *clientid);
-typedef int (f_superuser)(void *conf, const char *username);
-typedef int (f_aclcheck)(void *conf, const char *clientid, const char *username, const char *topic, int acc);
+typedef void(f_kill)(void* conf);
+typedef int(f_getuser)(void* conf, const char* username, const char* password, char** phash, const char* clientid);
+typedef int(f_superuser)(void* conf, const char* username);
+typedef int(f_aclcheck)(void* conf, const char* clientid, const char* username, const char* topic, int acc);
 
-void t_expand(const char *clientid, const char *username, const char *in, char **res);
+void t_expand(const char* clientid, const char* username, const char* in, char** res);
 
 #endif

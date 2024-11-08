@@ -1,10 +1,10 @@
 /*
  * Copyright (c) 2014 Jan-Piet Mens <jp@mens.de>
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice,
  *    this list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright
@@ -13,7 +13,7 @@
  * 3. Neither the name of mosquitto nor the names of its
  *    contributors may be used to endorse or promote products derived from
  *    this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -27,24 +27,25 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <time.h>
 #include "uthash.h"
 #include <openssl/sha.h>
+#include <time.h>
 
 #ifndef __CACHE_H
-# define __CACHE_H
+#define __CACHE_H
 
-struct cacheentry {
-        char hex[SHA_DIGEST_LENGTH * 2 + 1];    /* key within struct */
-        int granted;
-        time_t expire_time;
-        UT_hash_handle hh;
+struct cacheentry
+{
+    char hex[SHA_DIGEST_LENGTH * 2 + 1]; /* key within struct */
+    int granted;
+    time_t expire_time;
+    UT_hash_handle hh;
 };
 
-void acl_cache(const char *clientid, const char *username, const char *topic, int access, int granted, void *userdata);
-int acl_cache_q(const char *clientid, const char *username, const char *topic, int access, void *userdata);
+void acl_cache(const char* clientid, const char* username, const char* topic, int access, int granted, void* userdata);
+int acl_cache_q(const char* clientid, const char* username, const char* topic, int access, void* userdata);
 
-void auth_cache(const char *username, const char *password, int granted, void *userdata);
-int auth_cache_q(const char *username, const char *password, void *userdata);
+void auth_cache(const char* username, const char* password, int granted, void* userdata);
+int auth_cache_q(const char* username, const char* password, void* userdata);
 
 #endif

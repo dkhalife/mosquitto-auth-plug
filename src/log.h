@@ -36,10 +36,10 @@
 #define LOG_NOTICE (2)
 #endif
 
-extern void (*_log)(int priority, const char *fmt, ...);
+extern void (*_log)(int priority, const char* fmt, ...);
 
 void log_init(void);
-void __log(int priority, const char *fmt, ...);
-void _fatal(const char *fmt, ...);
+void __log(int priority, const char* fmt, ...);
+void _fatal(const char* fmt, ...);
 
 extern int log_quiet;

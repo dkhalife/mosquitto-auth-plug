@@ -31,9 +31,9 @@
 
 #include <libpq-fe.h>
 
-void *be_pg_init();
-void be_pg_destroy(void *conf);
-int be_pg_getuser(void *conf, const char *username, const char *password, char **phash, const char *clientid);
-int be_pg_superuser(void *conf, const char *username);
-int be_pg_aclcheck(void *conf, const char *clientid, const char *username, const char *topic, int acc);
+void* be_pg_init();
+void be_pg_destroy(void* conf);
+int be_pg_getuser(void* conf, const char* username, const char* password, char** phash, const char* clientid);
+int be_pg_superuser(void* conf, const char* username);
+int be_pg_aclcheck(void* conf, const char* clientid, const char* username, const char* topic, int acc);
 #endif /* BE_POSTGRES */

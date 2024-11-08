@@ -29,13 +29,13 @@
 
 #ifdef BE_FILES
 
-void *be_files_init();
-void be_files_destroy(void *handle);
-int be_files_getuser(void *handle, const char *username, const char *password, char **phash, const char *clientid);
-int be_files_superuser(void *handle, const char *username);
-int be_files_aclcheck(void *handle, const char *clientid, const char *username, const char *topic, int access);
+void* be_files_init();
+void be_files_destroy(void* handle);
+int be_files_getuser(void* handle, const char* username, const char* password, char** phash, const char* clientid);
+int be_files_superuser(void* handle, const char* username);
+int be_files_aclcheck(void* handle, const char* clientid, const char* username, const char* topic, int access);
 
 int be_files_aclpatterns_available(void);
-int be_files_aclpatterns_check(const char *clientid, const char *username, const char *topic, int access);
+int be_files_aclpatterns_check(const char* clientid, const char* username, const char* topic, int access);
 
 #endif /* BE_FILES */
