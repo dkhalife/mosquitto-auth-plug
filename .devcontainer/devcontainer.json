@@ -5,6 +5,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"CS128.cs128-clang-tidy",
 				"mitaki28.vscode-clang",
 				"ms-vscode.cpptools",
 				"xaver.clang-format"
